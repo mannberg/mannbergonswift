@@ -7,7 +7,7 @@ tags: Swift language features, @propertyWrapper
 
 ## What are property wrappers?
 
-Property wrappers is a feature that was added to Swift 5.1, which lets us decorate properties of different types with @-preceded keywords. Well-known examples are SwiftUI's `@ObservableObject`, `@State` and `@Binding`, just to name a few. We can easily define our own property wrappers, which let's us perform custom logic whenever they're get or set.
+Property wrappers is a feature that was added to Swift 5.1, which lets us decorate properties of different types with @-preceded keywords. Well-known examples are SwiftUI's `@ObservableObject`, `@State` and `@Binding`, just to name a few. We can easily define our own property wrappers with custom logic that can be triggered whenever our properties are get or set.
  
  The example below creates a property wrapper called `@Lowercased`. The `wrappedValue` property is required, and it's type - `String` in this case - determines which type can be decorated with the property wrapper.
 
@@ -162,7 +162,3 @@ doggie.age = 3
 
 print("Our doggie has a new name, \(doggie.name), and is now \(doggie.age) dog years old")
 ```
-
-Just as we did earlier, we can course still extend the `Transformed` type with composed functions we would like to be reusable.
-
-
