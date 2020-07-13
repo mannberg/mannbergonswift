@@ -13,7 +13,6 @@ extension Theme where Site == TestableSwift {
     static var testableSwift: Self {
         Theme(
             htmlFactory: FoundationHTMLFactory()
-//            resourcePaths: ["/Resources/styless.css"]
         )
     }
 }
@@ -27,12 +26,7 @@ private struct FoundationHTMLFactory<Site: Website>: HTMLFactory {
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(
-                    .h1(.text(index.title)),
-                    .p(
-                        .class("description"),
-                        .text(context.site.description)
-                    ),
-                    .h2("Latest content"),
+                    .h1("Latest content"),
                     .itemList(
                         for: context.allItems(
                             sortedBy: \.date,
@@ -230,18 +224,6 @@ private extension Node where Context == HTML.BodyContext {
 }
 
 extension Node where Context == HTML.DocumentContext {
-    /// Add an HTML `<head>` tag within the current context, based
-    /// on inferred information from the current location and `Website`
-    /// implementation.
-    /// - parameter location: The location to generate a `<head>` tag for.
-    /// - parameter site: The website on which the location is located.
-    /// - parameter titleSeparator: Any string to use to separate the location's
-    ///   title from the name of the website. Default: `" | "`.
-    /// - parameter stylesheetPaths: The paths to any stylesheets to add to
-    ///   the resulting HTML page. Default: `styles.css`.
-    /// - parameter rssFeedPath: The path to any RSS feed to associate with the
-    ///   resulting HTML page. Default: `feed.rss`.
-    /// - parameter rssFeedTitle: An optional title for the page's RSS feed.
     static func head<T: Website>(
         for location: Location,
         on site: T,

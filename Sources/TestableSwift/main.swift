@@ -15,11 +15,11 @@ struct TestableSwift: Website {
 //        var ingredients: [String]
 //        var preparationTime: TimeInterval
     }
-
+    
     // Update these properties to configure your website:
     var url = URL(string: "https://your-website-url.com")!
-    var name = "Mannberg on Swift"
-    var description = "Exploring functional programming, test-driven development and all that jazz!"
+    var name = "@testable Swift"
+    var description = "A Swift blog by Anders Mannberg on test-driven development, functional programming and the stuff in between!"
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
